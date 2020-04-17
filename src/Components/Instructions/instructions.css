@@ -1,0 +1,19 @@
+.instruction{
+  width: 90%;
+  margin: auto;
+  max-width: 450px;
+  margin: auto;
+  list-style: none;
+}
+
+.instruction > div {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.instruction > li {
+  padding: 4px 0;
+  font-size: 16px;
+}

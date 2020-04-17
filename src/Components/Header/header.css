@@ -1,0 +1,14 @@
+.top-header{
+  padding: 12px;
+  width: 90%;
+  margin: auto;
+  max-width: 450px;
+  background: #fff;
+}
+
+.page-title {
+  font-size: 28px;
+  width: 100%;
+  margin-bottom: 8px;
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+.score-input {
+  padding: 0px 16px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  max-width: 450px;
+  background: #fff;
+}
+
+.score-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 5px auto;
+  padding: 12px 0;
+}
+
+.score-box > div {
+  border: 1px solid #ddd;
+  height: 28px;
+  width: 92px;
+  margin-left: 8px;
+  line-height: 28px;
+  padding: 0 8px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
