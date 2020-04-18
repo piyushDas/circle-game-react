@@ -34,14 +34,19 @@
     margin-bottom: 10px;
 }
 
-.blink-red{
+.blink-red, .blink-red:hover{
     border: 1px solid #ff4075;
     background: #e80950;
 }
 
-.blink-green {
+.blink-green, .blink-green:hover {
     border: 1px solid #067d1b;
     background: #05ff19;
+}
+
+.blink-blue, .blink-blue:hover {
+    border: 1px solid #df3cfb;
+    background: #df3cfb;
 }
 
 .button {

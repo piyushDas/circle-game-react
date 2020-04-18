@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { AppContext } from '../../context'
 
 const Tile = ({
@@ -13,11 +13,23 @@ const Tile = ({
   const tiles = []
   const eachRow = ['','','','','','']
   for (let index = 0; index < 6; index++) {
-    tiles.push(eachRow)
+    tiles.push([...eachRow])
   }
 
   const [classVar, updateClassVar] = useState()
   const [hit, setHit] = useState({})
+
+  useEffect(() => {
+    setTimeout(() => {
+      blinkTile('set', `index_${autoSelectedTile.row}_${autoSelectedTile.col}`)
+    }, 1000)
+  }, [autoSelectedTile])
+
+  useEffect(() => {
+    setTimeout(() => {
+      updateClassVar('')
+    }, 200)
+  }, [hit])
 
   const hitTile = (row, col) => () => {
     console.log(row, col)
@@ -26,7 +38,7 @@ const Tile = ({
       selectTile(6, 6)
       blinkTile('hit', `index_${row}_${col}`)
     } else {
-      updateScore(score+1)
+      updateScore(score-1)
       blinkTile('miss', `index_${row}_${col}`)
     }
   }
@@ -34,13 +46,15 @@ const Tile = ({
   const blinkTile = (type, id) => {
       if (type === 'hit') {
         updateClassVar('blink-green')
-      } else {
+      } else if (type === 'miss'){
         updateClassVar('blink-red')
+      } else {
+        updateClassVar('blink-blue')
       }
       const [, row, col] = id.split('_')
       setHit({
-        row: row,
-        col: col
+        row: Number.parseInt(row),
+        col: Number.parseInt(col)
       })
   }
 
